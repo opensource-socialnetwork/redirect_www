@@ -17,12 +17,12 @@
  */
 function ossn_redirect_www() {
   $url = ossn_site_url();
-  $parase = parse_url($url);
-  $host = str_replace('www.', '', $parase['host']);
+  $parse = parse_url($url);
+  $host = str_replace('www.', '', $parse['host']);
   if($_SERVER['HTTP_HOST'] ==  $host){
 	 header("HTTP/1.1 301 Moved Permanently"); 
 	 $url = rtrim($url, '/');
-	 $url = "{$parase['scheme']}://www.{$parase['host']}{$_SERVER['REQUEST_URI']}";
+	 $url = "{$parase['scheme']}://www.{$parse['host']}{$_SERVER['REQUEST_URI']}";
 	 header("Location: {$url}"); 
   }	
 }
