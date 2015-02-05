@@ -22,7 +22,7 @@ function ossn_redirect_www() {
   if($_SERVER['HTTP_HOST'] ==  $host){
 	 header("HTTP/1.1 301 Moved Permanently"); 
 	 $url = rtrim($url, '/');
-	 $url = "{$parase['scheme']}://www.{$parse['host']}{$_SERVER['REQUEST_URI']}";
+	 $url = "{$parse['scheme']}://www.{$parse['host']}{$_SERVER['REQUEST_URI']}";
 	 header("Location: {$url}"); 
   }	
 }
